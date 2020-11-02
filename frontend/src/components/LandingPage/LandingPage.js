@@ -1,10 +1,11 @@
 import React from 'react'
-//Import components that you create here
+import { MyNavbar } from "../MyNavbar/MyNavbar";
 
 function LandingPage(){
     return(
-        //Use components that you import here
-        <></>
+        <>
+            <MyNavbar />
+        </>
     )
 }
 
