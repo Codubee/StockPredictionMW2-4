@@ -1,15 +1,14 @@
-import Explanation from "./Explanation";
-import { hasBeenRendered } from "../../global";
-import { shallow } from "enzyme";
+import { render, screen } from '@testing-library/react';
+import Explanation from './Explanation';
 
-const wrapper = shallow(<Explanation />);
+test('renders stock prediction title', () => {
+    render(<Explanation />);
+    const titleElement = screen.getByText(/Stock Prediction/i);
+    expect(titleElement).toBeInTheDocument();
+});
 
-describe("Test LandingPage Component", () => {
-    it("should render", () => {
-        hasBeenRendered(wrapper);
-    });
-
-    it("should render navbar", () => {
-        hasBeenRendered(wrapper.find(Explanation));
-    });
+test('renders Fall 2020', () => {
+    render(<Explanation />);
+    const dateElement = screen.getByText(/Fall 2020/i);
+    expect(dateElement).toBeInTheDocument();
 });
