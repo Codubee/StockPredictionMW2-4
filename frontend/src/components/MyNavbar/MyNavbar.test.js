@@ -1,42 +1,51 @@
 import { MyNavbar } from "./MyNavbar";
-import { MyNavLink } from "../MyNavLink/MyNavLink";
-import { shallow } from 'enzyme';
-import { hasBeenRendered, navlinks } from "../../global";
+import { render, shallow } from 'enzyme';
+import { 
+    hasBeenRendered, 
+    navlinks, 
+    navbrand 
+} from "../../global";
 
 /**
  * Checks if the navbar has the link.
  * 
- * @param {any} wrapper Shallow component
- * @param {number} index Index position of the link in the navbar.
+ * @param {cheerio.Cheerio} wrapper Render wrapper.
+ * @param {any} link Link to check.
+ * @param {string} className class name of element to check link in.
  */
-const checkLink = (wrapper, index) => {
-    let navlink = navlinks[index];
-    for(let prop in navlink) {
-        expect(wrapper.find(MyNavLink).at(index).html().includes(navlink[prop])).toBeTruthy();
-    }
+const checkLink = (wrapper, link, className) => {
+    const { label, url } = link;
+    const element = wrapper.find(`.${className}[href="${url}"]`);
+    expect(element).toBeTruthy();
+    expect(element.text() === label).toBe(true);
 }
 
-const wrapper = shallow(<MyNavbar />);
+const component = <MyNavbar />;
+const renderWrapper = render(component);
 
 describe("Test Navbar component", () => { 
 
     it("should render", () => {
-        hasBeenRendered(wrapper);
+        hasBeenRendered(shallow(component));
+    });
+
+    it("should have brand that links to landing page", () => {
+        checkLink(renderWrapper, navbrand, "navbar-brand");
     });
 
     it("should have 3 links", () => {
-        expect(wrapper.find(MyNavLink)).toHaveLength(3);
+        expect(renderWrapper.find(".nav-link")).toHaveLength(3);
     });
     
     it("should have Github link", () => {
-        checkLink(wrapper, 0);
+        checkLink(renderWrapper, navlinks[0], "nav-link");
     });
     
     it("should have User input link", () => {
-        checkLink(wrapper, 1);
+        checkLink(renderWrapper, navlinks[1], "nav-link");
     });
     
-    it("should have Home page or landing page link", () => {
-        checkLink(wrapper, 2);
+    it("should have landing page link", () => {
+        checkLink(renderWrapper, navlinks[2], "nav-link");
     });
 });

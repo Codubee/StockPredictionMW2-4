@@ -1,3 +1,8 @@
+export const navbrand = {
+    url: "/",
+    label: "Stock Predictor"
+};
+
 export const navlinks = [
     {
         url: "https://github.com/Codubee/StockPredictionMW2-4",
@@ -9,14 +14,15 @@ export const navlinks = [
     },
     {
         url: "/",
-        label: "Home page or landing page"
+        label: "Landing page"
     },
 ];
 
 /**
  * Checks that the component has been rendered.
  * 
- * @param {any} wrapper Shallow component.
+ * @param {any} wrapper Shallow wrapper.
  */
-export const hasBeenRendered = (wrapper) => 
+export function hasBeenRendered(wrapper) {
     expect(wrapper.exists()).toBeTruthy();
+}

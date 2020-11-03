@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
-import { Collapse, Navbar, NavbarToggler, Nav } from 'reactstrap';
-import { MyNavLink } from '../MyNavLink/MyNavLink';
+import { 
+    Collapse, 
+    Navbar, 
+    NavbarToggler, 
+    Nav, 
+    NavItem, 
+    NavLink, 
+    NavbarBrand 
+} from 'reactstrap';
 import { navlinks } from "../../global";
 
 /**
@@ -16,22 +23,27 @@ export function MyNavbar() {
 
     return (
         <Navbar color="light" light expand="md">
+            
+            <NavbarBrand href="/">Stock Predictor</NavbarBrand>
             <NavbarToggler onClick={toggle} />
+
             <Collapse isOpen={isOpen} navbar>
                 <Nav className="mr-auto" navbar>
                     { navlinks.map((navlink, index) => {
                         const {url, label} = navlink;
                         return (
                             <div key={index}>
-                                <MyNavLink 
-                                    url={url} 
-                                    label={label}
-                                />
+                                <NavItem>
+                                    <NavLink href={url}>
+                                        {label}
+                                    </NavLink>
+                                </NavItem>
                             </div>
                         );
                     })}
                 </Nav>
             </Collapse>
+
         </Navbar>
     );
 }
