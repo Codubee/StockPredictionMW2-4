@@ -16,7 +16,7 @@ import { navlinks } from "../../global";
  * 
  * @return {JSX.Element} navbar.
  */
-export function MyNavbar() {
+export default function MyNavbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);

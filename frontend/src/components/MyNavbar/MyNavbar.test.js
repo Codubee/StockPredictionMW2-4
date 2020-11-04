@@ -1,4 +1,4 @@
-import { MyNavbar } from "./MyNavbar";
+import MyNavbar from "./MyNavbar";
 import { render, shallow } from 'enzyme';
 import { 
     hasBeenRendered, 
