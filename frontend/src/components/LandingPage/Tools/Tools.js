@@ -16,21 +16,21 @@ const Tools = (props) => {
                 <hr classname="my-2" />
                 <Media>
                     <Media left top href="#">
-                        <Media object src={ReactPicture} alt="" />
+                        <Media object src={ReactPicture} />
                     </Media>
                     <Media>
                         <Media left middle href="#">
-                            <Media object src={NodePicture} alt="" />
+                            <Media object src={NodePicture} />
                         </Media>
                     </Media>
                     <Media>
                         <Media left bottom href="#">
-                            <Media object src={JiraPicture} alt="" />
+                            <Media object src={JiraPicture} />
                         </Media>
                     </Media>
                     <Media>
                         <Media right bottom href="#">
-                            <Media object src={GithubPic} alt=""/>
+                            <Media object src={GithubPic} />
                         </Media>
                     </Media>
                 </Media>
