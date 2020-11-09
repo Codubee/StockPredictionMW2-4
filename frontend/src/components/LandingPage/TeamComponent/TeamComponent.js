@@ -12,7 +12,7 @@ const TeamCard = (props) => {
     <link href="TeamCard.css" type="text/css" rel="stylesheet" />
     <Card style={{width:"75%"}}>
         <br />
-        <Image src = {props.headshot} alt = {props.name} borderRadius= "50%" style = {{ width: "70%", alignContent: "center"}} roundedCircle/>
+        <Image src = {props.headshot} alt = {props.name}  width = "70%" borderRadius = "50%" style = {{alignSelf: "center"}} roundedCircle/>
         <CardBody className="text-center">
           <CardTitle tag="h5">{props.name}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{props.line1}<br />{props.line2}<br />{props.line3}<br /></CardSubtitle>
