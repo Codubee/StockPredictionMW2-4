@@ -37,12 +37,4 @@
   }
 }
 
-img {
-  width: 300px;
-  height: 200px;
-  object-fit: contain;
-}
 
-.jumbotron{
-  color: #a58007;
-}
