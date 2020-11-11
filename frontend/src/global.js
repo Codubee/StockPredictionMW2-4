@@ -9,7 +9,7 @@ export const navlinks = [
         label: "Github"
     },
     {
-        url: "#",
+        url: "/input",
         label: "User input"
     },
     {
