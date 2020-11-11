@@ -4,7 +4,7 @@ import ReactPicture from './Pictures/ReactPicture.png'
 import NodePicture from './Pictures/NodePicture.png'
 import JiraPicture from './Pictures/JiraPicture.png'
 import GithubPic from './Pictures/GithubPic.png'
-import './Tools.css'
+import './ToolsStyle.css'
 
 function Tools() {
     return (
