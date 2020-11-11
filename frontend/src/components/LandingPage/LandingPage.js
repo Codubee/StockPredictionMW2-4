@@ -40,7 +40,7 @@ function LandingPage(){
             github = "https://github.com/Nirvair-Sangha" />
         </Col>
         <Col  lg = "4" md = "4" sm = "12" xs = "12">
-            <TeamCard headshot = "/githubLogo.png" altText = "Venkata Chikkam Headshot" name = "Venkata Chikkam"
+            <TeamCard headshot = "/VenkataChikkam.jpg" altText = "Venkata Chikkam Headshot" name = "Venkata Chikkam"
             line1 = "Computer Science" line2 = "UT Dallas" line3 = "Class of 2021"
             github = "https://github.com/vpc2513"/>
         </Col>
