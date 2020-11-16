@@ -14,12 +14,8 @@ function App() {
     <Router>
       <MyNavbar />
       <Switch>
-        <Route path="/input">
-          <SamplePage />
-        </Route>
-        <Route path="/">
-          <LandingPage />
-        </Route>
+        <Route path="/input" component={SamplePage} />
+        <Route path="/"  component={LandingPage} />
       </Switch>
     </Router>
   );

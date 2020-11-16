@@ -1,11 +1,18 @@
 import App from './App';
 import MyNavbar from "./components/MyNavbar/MyNavbar";
-import { shallow, mount } from "enzyme";
+import { shallow } from "enzyme";
 import { hasBeenRendered } from "./global";
+import { Route } from 'react-router';
 import SamplePage from './components/SamplePage/SamplePage';
-import { MemoryRouter } from 'react-router';
+import LandingPage from './components/LandingPage/LandingPage';
 
 const wrapper = shallow(<App />);
+
+const pathMap = wrapper.find(Route).reduce((pathMap, route) => {
+  const routeProps = route.props();
+  pathMap[routeProps.path] = routeProps.component;
+  return pathMap;
+}, {});
 
 describe("Test App Component", () => {
   it("should render", () => {
@@ -16,14 +23,11 @@ describe("Test App Component", () => {
     hasBeenRendered(wrapper.find(MyNavbar));
   });
 
-  // issues with enzyme + React 17: https://github.com/enzymejs/enzyme/issues/2462
-  // test('root path should go to landing page', () => {
-  //   const wrapper = mount(
-  //     <MemoryRouter initialEntries={[ '/' ]}>
-  //       <App />
-  //     </MemoryRouter>
-  //   );
-  //   expect(wrapper.find(LandingPage)).toHaveLength(1);
-  //   expect(wrapper.find(SamplePage)).toHaveLength(0);
-  // });
+  it('renders input page', () => {
+    expect(pathMap['/input']).toBe(SamplePage);
+  });
+
+  it('renders landing page', () => {
+    expect(pathMap['/']).toBe(LandingPage);
+  });
 });
