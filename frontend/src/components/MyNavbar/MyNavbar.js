@@ -6,9 +6,11 @@ import {
     Nav, 
     NavItem, 
     NavLink, 
-    NavbarBrand 
+    NavbarBrand,
+    NavbarText
 } from 'reactstrap';
 import { navlinks } from "../../global";
+import Weather from "../LandingPage/Weather/Weather";
 
 /**
  * Makes the navbar for navigating different pages
@@ -42,6 +44,7 @@ export default function MyNavbar() {
                         );
                     })}
                 </Nav>
+                <NavbarText><Weather/></NavbarText>
             </Collapse>
 
         </Navbar>
