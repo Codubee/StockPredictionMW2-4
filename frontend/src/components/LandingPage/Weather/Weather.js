@@ -5,14 +5,16 @@ const weatherData = {
     temperature: "65"
 };
 
-class Weather extends React.Component() {
+class Weather extends React.Component {
     render() {
         return(
-           <span>
-               {weatherData.city}
+            <span>
+               {weatherData.city + "  "}
                {weatherData.temperature}
-           </span> 
+            </span>
         );
     }
 
 }
+
+export default Weather;
