@@ -3,12 +3,13 @@ import { Row, Col, CardText, CardHeader,Card } from 'reactstrap';
 import { featuresArray }  from '../../../global';
 
 function Features() {
-    return (<div>
-        <h1 className="text-center">Features</h1>
-        <h6 className="text-center">These are the main features of our application</h6>
+    return (
+    <div className = "text-center">
+        <h1 >Features</h1>
+        <h6 >These are the main features of our application</h6>
         <br></br>
         <br></br>
-        <Row className="text-center">
+        <Row >
             {
                 featuresArray.map((curr,index) => (
                     <Col md="3" key={index}>
