@@ -3,12 +3,16 @@ import React from 'react'
 import './TeamCard/TeamPage';
 import './LandingPage.css';
 import TeamPage from './TeamCard/TeamPage';
+import Explanation from './Explanation/Explanation'
 
-function LandingPage(){
-    return(
+function LandingPage() {
+    return (
         //Use components that you import here
-        <TeamPage />
-    );
+        <>
+            <TeamPage />
+            <Explanation />
+        </>
+    )
 }
 
 export default LandingPage;
