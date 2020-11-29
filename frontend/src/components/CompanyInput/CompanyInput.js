@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import { 
     Form, 
     FormGroup, 
@@ -9,24 +9,34 @@ import {
 } from "reactstrap";
 import "./CompanyInput.css";
 
-export default function CompanyInput() {
+export default class CompanyInput extends Component {
 
-    const [companyName, setCompanyName] = useState("");
+    constructor(props) {
+        super(props);
+        this.state = {
+            companyName: ""
+        }
+    }
 
-    return (
-        <Form id="company-form">
-            <FormGroup>
-                <InputGroup>
-                    <Input 
-                        placeholder="Enter company name" 
-                        onChange={(event) => setCompanyName(event.target.value)} 
-                        value={companyName} 
-                    />
-                    <InputGroupAddon addonType="append">
-                        <Button>Enter</Button>
-                    </InputGroupAddon>
-                </InputGroup>
-            </FormGroup>
-        </Form>
-    );
+    render() {
+        return (
+            <Form id="company-form">
+                <FormGroup>
+                    <InputGroup>
+                        <Input 
+                            placeholder="Enter company name" 
+                            onChange={(event) => 
+                                this.setState({
+                                    companyName: event.target.value
+                            })} 
+                            value={this.state.companyName} 
+                        />
+                        <InputGroupAddon addonType="append">
+                            <Button>Enter</Button>
+                        </InputGroupAddon>
+                    </InputGroup>
+                </FormGroup>
+            </Form>
+        );
+    }
 }
