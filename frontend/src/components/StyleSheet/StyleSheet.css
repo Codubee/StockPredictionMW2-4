@@ -1,0 +1,30 @@
+/* =================== BACKGROUND & TEXT COLOR SECTION ====================*/
+.navbar, .footer {
+    background-color: #0B6623;
+    color: #a9a9a9;
+};
+
+.navbar:hover, .footer:hover {
+    color: #ffffff;
+};
+
+.light-section {
+    background-color: #aad688;
+    color: #3f3f3f;
+};
+
+.dark-section {
+    background-color: #47894b;
+    color: #ffffff;
+};
+
+
+/* =========================== HEADINGS SECTION =======================*/
+.main-heading {
+
+}
+
+.underline {
+    text-decoration: underline solid inherit 10px;
+}
+
