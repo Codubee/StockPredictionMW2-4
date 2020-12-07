@@ -9,29 +9,29 @@ import './ToolsStyle.css'
 function Tools() {
     return (
         <div>
-            <Jumbotron>
+            <Jumbotron className="tools-jumbotron">
                 <h1 className="display-3">Tools</h1>
                 <p className="lead">Some of the tools we will be using to work on this project include React.js to develop the 
                 front end, node.js to develop the back end, Jira to help keep track of what tasks must be done by who and when,
                 and finally GitHub which will simplify the process of working as a team and keeping track of multiple changes in the code.</p>
-                <hr classname="my-2" />
+                <hr className="my-2" />
                 <Media>
-                    <Media left top href="#">
-                        <Media object src={ReactPicture} />
+                    <Media left href="https://reactjs.org/">
+                        <Media object src={ReactPicture} className="tools-img"/>
                     </Media>
-                    <Media>
-                        <Media left middle href="#">
-                            <Media object src={NodePicture} />
+                    <Media left href="https://nodejs.org/en/">
+                        <Media>
+                            <Media object src={NodePicture} className="tools-img" />
                         </Media>
                     </Media>
-                    <Media>
-                        <Media left bottom href="#">
-                            <Media object src={JiraPicture} />
+                    <Media right href="https://www.atlassian.com/software/jira">
+                        <Media>
+                            <Media object src={JiraPicture} className="tools-img" />
                         </Media>
                     </Media>
-                    <Media>
-                        <Media right bottom href="#">
-                            <Media object src={GithubPic} />
+                    <Media right href="https://github.com/">
+                        <Media>
+                            <Media object src={GithubPic} className="tools-img" />
                         </Media>
                     </Media>
                 </Media>

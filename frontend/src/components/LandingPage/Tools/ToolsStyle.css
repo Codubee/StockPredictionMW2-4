@@ -1,9 +1,11 @@
-img {
-    width: 300px;
-    height: 200px;
-    object-fit: contain;
-  }
-  
-  .jumbotron {
-    color: #a58007;
-  }
+.tools-img {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  align-items: center;
+  justify-content: center;
+}
+
+.tools-jumbotron {
+  color: #a58007;
+}
