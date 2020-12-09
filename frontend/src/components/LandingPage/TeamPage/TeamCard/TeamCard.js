@@ -1,16 +1,16 @@
 import React from 'react';
 import {
-  Card, CardBody, CardTitle, CardSubtitle
+  Card, CardImg, CardBody, CardTitle, CardSubtitle
 } from 'reactstrap';
-import Image from 'react-bootstrap/Image';
 import './TeamCard.css'
+import '../../../StyleSheet/StyleSheet.css'
 
 function TeamCard (props) {
   return (
     <span>
     <Card>
         <br />
-        <Image className = "headshot" src = {props.headshot} alt = {props.name}  roundedCircle/>
+        <CardImg className = "headshot" src = {props.headshot} alt = {props.name}  roundedCircle/>
         <CardBody className="text-center">
           <CardTitle tag="h5">{props.name}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{props.line1}<br />{props.line2}<br />{props.line3}</CardSubtitle>

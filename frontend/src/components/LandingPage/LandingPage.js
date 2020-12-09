@@ -1,16 +1,15 @@
 import React from 'react'
 //Import components that you create here
-import './TeamCard/TeamPage';
 import './LandingPage.css';
-import TeamPage from './TeamCard/TeamPage';
+import TeamPage from './TeamPage/TeamPage';
 import Explanation from './Explanation/Explanation'
+import StyleSheet from '../StyleSheet/StyleSheet'
 
 function LandingPage() {
     return (
         //Use components that you import here
         <>
-            <TeamPage />
-            <Explanation />
+            <StyleSheet />
         </>
     )
 }

@@ -1,30 +1,89 @@
-/* =================== BACKGROUND & TEXT COLOR SECTION ====================*/
-.navbar, .footer {
+/* ====================== FONTS =========================================*/
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Rajdhani&display=swap');
+
+/* =================== COLOR [BACKGROUND & TEXT] SECTION ====================*/
+.navbar, .footer{
     background-color: #0B6623;
     color: #a9a9a9;
-};
+}
 
-.navbar:hover, .footer:hover {
+.navbar:hover, .footer:hover{
     color: #ffffff;
-};
+}
 
-.light-section {
-    background-color: #aad688;
+.light-background{
+    background-color: #cdeeb5;
     color: #3f3f3f;
-};
+    padding: 10px 10px;
+}
 
-.dark-section {
-    background-color: #47894b;
+.dark-background{
+    background-color: #3b703f;
     color: #ffffff;
-};
+    padding: 10px 10px;
+}
 
 
-/* =========================== HEADINGS SECTION =======================*/
-/*.main-heading {
-    
-} */
+/* =========================== TEXT [STYLE & SIZE] SECTION =======================*/
 
-.underline {
+.underline{
     text-decoration: underline solid inherit 10px;
 }
 
+.main-heading{
+    font-size: xx-large;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.sub-heading{
+    font-size: x-large;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.body-text{
+    font-size: large;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/*================================== IMAGE ================================*/
+.inline-image {
+    max-height: 250px;
+}
+.caption{
+    font-size: medium;
+    font-style: italic;
+    font-family: 'Exo 2', sans-serif;
+    max-width: inherit;
+}   
+
+/* ===================================== LAYOUTS ======================================= */
+.row {
+    width: 100%;
+    padding: 10px;
+  }
+
+/* Two Equal Columns*/
+    .two-equal-column {
+        flex: 50%;
+    }
+
+  /*Two Unequal Columns*/
+    .two-larger-column {
+        flex: 66.66%;
+    }
+    .two-smaller-column {
+        flex: 33.34%;
+    }
+
+/*Three Equal Columns*/
+    .three-equal-column {
+        flex: 33.33%;
+    }
+
+/*Three Unequal Columns*/
+    .left, .right {
+        flex: 25%;
+    }
+    .middle {
+        flex: 50%;
+    }
