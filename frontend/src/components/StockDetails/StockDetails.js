@@ -2,15 +2,17 @@ import React from 'react'
 import News from './News/News'
 import Price from './Price/Price'
 
-function StockDetails() {
+function StockDetails(props) {
 
+    const companyName = props.match.params.companyName
     return (
         <div class="container text-center">
-            <h3>ID: {this.props.match.params.companyName}</h3>
-            <News companyName={this.state.companyName} />
-            <Price companyName={this.state.companyName} />
+            <News companyName={companyName} />
+            <Price companyName={companyName} />
         </div>
 
     )
 
 }
+
+export default StockDetails;

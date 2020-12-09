@@ -27,7 +27,7 @@ export default class Prediction extends React.Component{
 
     render(){
         return(
-            <h1>hello world</h1>
+            <h1>Prediction is: {this.state.companyName}</h1>
         )
     }
 }

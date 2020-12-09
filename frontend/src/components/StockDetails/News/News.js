@@ -29,7 +29,7 @@ export default class News extends React.Component{
     render(){
         return(
             // <Prediction/> here we have to send the company news to the prediction component as props
-            <h1>{this.state.companyName}</h1>
+            <h1>News is: {this.state.companyName}</h1>
         )
     }
 }
