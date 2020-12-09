@@ -16,7 +16,10 @@ export default class CompanyInput extends Component {
         this.state = {
             companyName: ""
         }
+        this.handleClick = this.handleClick.bind(this)
     }
+
+    handleClick (){ this.props.history.push("/information/"+this.state.companyName);}
 
     render() {
         return (
@@ -32,7 +35,7 @@ export default class CompanyInput extends Component {
                             value={this.state.companyName} 
                         />
                         <InputGroupAddon addonType="append">
-                            <Button>Enter</Button>
+                            <Button onClick={this.handleClick}>Enter</Button>
                         </InputGroupAddon>
                     </InputGroup>
                 </FormGroup>
