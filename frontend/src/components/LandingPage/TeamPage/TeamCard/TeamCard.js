@@ -18,12 +18,6 @@ function TeamCard (props) {
       </Card>
       <br />
     </span>
-
-
-
-
-
-
   );
 };
 
