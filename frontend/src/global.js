@@ -18,6 +18,26 @@ export const navlinks = [
     },
 ];
 
+export const featuresArray = [
+    {
+        "feature":"Guess Price of Stock",
+        "desc":"We will guess if the price of a stock is going to increase or decrease based on recent news articles about the company"
+
+    },
+    {
+        "feature":"Stock information",
+        "desc":"We will give you the current price of a stock"
+    },
+    {
+        "feature":"Stock News Information",
+        "desc":"We will give you recent news on a stock of your choosing"
+    },
+    {
+        "feature":"Weather",
+        "desc":"We show you the weather in your area"
+    }
+]
+
 /**
  * Checks that the component has been rendered.
  * 
