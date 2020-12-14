@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
+var bodyParser = require('body-parser');
+
+var urlencodedParser = bodyParser.urlencoded({ extended: false })
+
 require('dotenv').config();
 app.use(express.json())
 
@@ -13,5 +17,9 @@ app.get('/',(req,res)=>{
 app.listen(port,()=>{
     console.log('API is up and running')
 })
+
+
+
+app.post()
 
 module.exports = app;
