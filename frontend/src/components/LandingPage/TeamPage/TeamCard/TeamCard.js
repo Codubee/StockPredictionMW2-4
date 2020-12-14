@@ -13,7 +13,7 @@ function TeamCard (props) {
         <CardBody className="text-center">
           <CardTitle tag="h5">{props.name}</CardTitle>
           <CardSubtitle tag="h6" className="mb-2 text-muted">{props.line1}<br />{props.line2}<br />{props.line3}</CardSubtitle>
-           <hr /><a target = "_blank" rel="noreferrer" href = {props.github}><img height = "40px" src = "/githubLogo.png"/></a>
+           <hr /><a target = "_blank" rel="noreferrer" href = {props.github}><img alt="Github logo" height = "40px" src = "/githubLogo.png"/></a>
         </CardBody>
       </Card>
       <br />

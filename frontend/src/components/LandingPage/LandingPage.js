@@ -3,14 +3,18 @@ import React from 'react'
 import './LandingPage.css';
 import TeamPage from './TeamPage/TeamPage';
 import Explanation from './Explanation/Explanation'
+import Features from './Features/Features'
+import Tools from './Tools/Tools'
 
 function LandingPage() {
     return (
         //Use components that you import here
-        <>
-            <TeamPage />
+        <div class="container">
             <Explanation />
-        </>
+            <Features/>
+            <Tools />
+            <TeamPage />
+        </div>
     )
 }
 

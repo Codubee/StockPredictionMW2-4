@@ -1,0 +1,7 @@
+#company-form {
+    padding: 15vh 20vw;
+}
+
+#company-form input:focus {
+    box-shadow: none;
+}

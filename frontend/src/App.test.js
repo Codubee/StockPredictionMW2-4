@@ -3,7 +3,7 @@ import MyNavbar from "./components/MyNavbar/MyNavbar";
 import { shallow } from "enzyme";
 import { hasBeenRendered } from "./global";
 import { Route } from 'react-router';
-import SamplePage from './components/SamplePage/SamplePage';
+import CompanyInput from './components/CompanyInput/CompanyInput';
 import LandingPage from './components/LandingPage/LandingPage';
 
 const wrapper = shallow(<App />);
@@ -24,7 +24,7 @@ describe("Test App Component", () => {
   });
 
   it('renders input page', () => {
-    expect(pathMap['/input']).toBe(SamplePage);
+    expect(pathMap['/input']).toBe(CompanyInput);
   });
 
   it('renders landing page', () => {
