@@ -22,14 +22,12 @@ app.get('/getNews', (req, res) => {
 
     var from = weekAgo.toISOString().split("T")[0];
     var to = today.toISOString().split("T")[0];
-
-    axios.get(`https://finnhub.io/api/v1/company-news?symbol=${company}&from=${from}&to=${to}`,
-                {"X-Finnhub-Token": process.env.FINNHUB_TOKEN})
+    axios.get(`https://finnhub.io/api/v1/company-news?symbol=${company}&from=${from}&to=${to}&token=${process.env.FINNHUB_TOKEN}`)
         .then(response => {
             res.status(200).json(response.data);
         }).catch((error)=>{
             console.log(error);
-            res.status(400).json({error:"Error occurred!"});
+            res.status(500).json({error:"Error occurred!"});
         })
 })
 
