@@ -2,6 +2,7 @@ import React from 'react'
 //Import components that you create here
 import Explanation from './Explanation/Explanation'
 import Features from './Features/Features'
+import Tools from './Tools/Tools'
 
 function LandingPage() {
     return (
@@ -9,6 +10,7 @@ function LandingPage() {
         <div class="container">
             <Explanation />
             <Features/>
+            <Tools />
         </div>
     )
 }
