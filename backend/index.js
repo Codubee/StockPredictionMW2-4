@@ -6,8 +6,8 @@ app.use(express.json())
 const port = 8080;
 
 const finnhub = require('finnhub');
-const api_key = finnhub.ApiClient.instance.authentications['api_key'];
-api_key.apiKey = process.env.API_KEY;
+const finnhub_api_key = finnhub.ApiClient.instance.authentications['api_key'];
+finnhub_api_key.apiKey = process.env.FINNHUB_API_KEY;
 const finnhubClient = new finnhub.DefaultApi();
 
 app.get('/',(req,res)=>{
@@ -20,7 +20,8 @@ app.listen(port,()=>{
 
 //Quote
 app.get('/quote', (req, res) => {
-    finnhubClient.quote("AAPL", (error, data, response) => {
+    var company = req.query.company;
+    finnhubClient.quote(company, (error, data, response) => {
         if(error) res.status(500).send(error);
         else res.status(200).send(data);
     });

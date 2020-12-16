@@ -17,7 +17,7 @@ describe('Tests enpoint at index.js',()=>{
 
     it('/quote should return stock quote',(done)=>{
         chai.request(app)
-        .get('/quote')
+        .get('/quote?company=AAPL')
         .end((err,res)=>{
             expect(res).to.have.status(200);
             done();
