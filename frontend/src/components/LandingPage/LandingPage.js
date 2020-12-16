@@ -9,7 +9,7 @@ import Tools from './Tools/Tools'
 function LandingPage() {
     return (
         //Use components that you import here
-        <div class="container">
+        <div className="container">
             <Explanation />
             <Features/>
             <Tools />

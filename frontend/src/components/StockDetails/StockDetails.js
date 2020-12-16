@@ -1,14 +1,14 @@
 import React from 'react'
-import News from './News/News'
-import Price from './Price/Price'
+import StockQuote from './StockQuote/StockQuote'
+import CompanyNews from './CompanyNews/CompanyNews'
 
 function StockDetails(props) {
 
     const companyName = props.match.params.companyName
     return (
-        <div class="container text-center">
-            <News companyName={companyName} />
-            <Price companyName={companyName} />
+        <div className="container text-center">
+            <StockQuote companyName={companyName} />
+            <CompanyNews companyName={companyName} />
         </div>
 
     )
