@@ -1,3 +1,4 @@
+const { expect } = require('chai');
 let chai = require('chai')
 let chaiHttp = require('chai-http')
 let app =  require('../index')
@@ -10,6 +11,16 @@ describe('Tests get enpoint at /',()=>{
         .get('/')
         .end((err,res)=>{
             res.text.should.be.eql('Hello world')
+            done();
+        })
+    })
+
+    it('Should send paramters to /checkNews',(done)=>{
+        chai.request(app)
+        .post('/checkNews')
+        .send({news: ['test', 'other']})
+        .end((err, res)=>{
+            expect(res).to.have.status(200);
             done();
         })
     })

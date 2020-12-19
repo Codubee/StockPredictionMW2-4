@@ -1,9 +1,6 @@
 const express = require('express');
 const app = express();
 const axios = require('axios');
-var bodyParser = require('body-parser');
-
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 require('dotenv').config();
 app.use(express.json())
@@ -14,12 +11,30 @@ app.get('/',(req,res)=>{
     res.send('Hello world');
 })
 
+app.post('/checkNews', function (req, res) {
+    console.log(req.body);
+    
+    const body = {
+        news: req.body
+    }
+
+    axios.post('https://codubee-api.herokuapp.com/comprehension',body)
+    .then(function (response) {
+        console.log(response.data);
+        res.status(200).json(response.data);
+    })
+    .catch(function (error) {
+        console.log(error)
+        res.status(400).json({error:"An error occurred"});
+    })
+})
+
 app.listen(port,()=>{
     console.log('API is up and running')
 })
 
 
 
-app.post()
+
 
 module.exports = app;
