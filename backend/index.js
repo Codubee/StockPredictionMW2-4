@@ -18,6 +18,23 @@ app.listen(port,()=>{
     console.log('API is up and running')
 })
 
+//Weather
+app.get('/weather', (req, res) => {
+    const weather_api_key = process.env.WEATHER_API_KEY;
+    const language = 'en';
+    const units = 'I';
+
+    axios.get(`http://api.weatherbit.io/v2.0/current?postal_code=75034&key=${weather_api_key}&language=${language}&units=${units}`)    
+    .then(function (response) {       
+        console.log(response.data);       
+        res.status(200).json(response.data); })
+    .catch(function (error) {
+        console.log(error)
+        res.status(400).json({error:"An error occurred"}); })
+});
+
+
+
 //Quote
 app.get('/quote', (req, res) => {
     var company = req.query.company;
@@ -26,6 +43,8 @@ app.get('/quote', (req, res) => {
         else res.status(200).send(data);
     });
 });
+
+
 app.get('/getNews', (req, res) => {
     var company = req.query.company;
     var today = new Date();
