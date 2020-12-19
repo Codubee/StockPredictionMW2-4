@@ -12,21 +12,19 @@ app.get('/',(req,res)=>{
 })
 
 app.post('/checkNews', function (req, res) {
-    console.log(req.body);
-    
     const body = {
         news: req.body
     }
 
     axios.post('https://codubee-api.herokuapp.com/comprehension',body)
-    .then(function (response) {
-        console.log(response.data);
-        res.status(200).json(response.data);
-    })
-    .catch(function (error) {
-        console.log(error)
-        res.status(400).json({error:"An error occurred"});
-    })
+        .then(function (response) {
+            console.log(response.data);
+            res.status(200).json(response.data);
+        })
+        .catch(function (error) {
+            console.log(error)
+            res.status(400).json({error:"An error occurred"});
+        })
 })
 
 app.listen(port,()=>{
