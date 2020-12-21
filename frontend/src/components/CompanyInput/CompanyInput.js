@@ -36,7 +36,7 @@ export default class CompanyInput extends Component {
                             value={this.state.companyName} 
                         />
                         <InputGroupAddon addonType="append">
-                            <Button onClick={this.handleClick}>Enter</Button>
+                            <Button onSubmit={this.handleClick}>Enter</Button>
                         </InputGroupAddon>
                     </InputGroup>
                 </FormGroup>
