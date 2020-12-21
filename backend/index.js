@@ -7,6 +7,11 @@ app.use(express.json())
 
 const port = 8080;
 
+const finnhub = require('finnhub');
+const finnhub_api_key = finnhub.ApiClient.instance.authentications['api_key'];
+finnhub_api_key.apiKey = process.env.FINNHUB_API_KEY;
+const finnhubClient = new finnhub.DefaultApi();
+
 app.get('/',(req,res)=>{
     res.send('Hello world');
 })
@@ -30,6 +35,33 @@ app.post('/checkNews', function (req, res) {
 app.listen(port,()=>{
     console.log('API is up and running')
 })
+
+//Weather
+app.get('/weather', (req, res) => {
+    const weather_api_key = process.env.WEATHER_API_KEY;
+    const language = 'en';
+    const units = 'I';
+
+    axios.get(`http://api.weatherbit.io/v2.0/current?postal_code=75034&key=${weather_api_key}&language=${language}&units=${units}`)    
+    .then(function (response) {       
+        console.log(response.data);       
+        res.status(200).json(response.data); })
+    .catch(function (error) {
+        console.log(error)
+        res.status(400).json({error:"An error occurred"}); })
+});
+
+
+
+//Quote
+app.get('/quote', (req, res) => {
+    var company = req.query.company;
+    finnhubClient.quote(company, (error, data, response) => {
+        if(error) res.status(500).send(error);
+        else res.status(200).send(data);
+    });
+});
+
 
 app.get('/getNews', (req, res) => {
     var company = req.query.company;
