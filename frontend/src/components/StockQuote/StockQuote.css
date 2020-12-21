@@ -1,0 +1,30 @@
+#stock-quotes {
+    padding: 10vh 20vw;
+}
+
+#stock-quotes .quote {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#stock-quotes .quote:not(:first-child) {
+    margin: 20px 0;
+}
+
+#stock-quotes .header {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+}
+
+#stock-quotes .company {
+    font-size: 1.5rem;
+}
+
+#stock-quotes .price {
+    font-size: 1.75rem;
+}
+
+#stock-quotes .price,
+#stock-quotes .company {
+    font-weight: bold;
+}
