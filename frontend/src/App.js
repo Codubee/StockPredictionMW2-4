@@ -1,7 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
 import LandingPage from './components/LandingPage/LandingPage';
-import SamplePage from './components/SamplePage/SamplePage';
+import CompanyInput from './components/CompanyInput/CompanyInput';
 import MyNavbar from "./components/MyNavbar/MyNavbar";
 import {
   BrowserRouter as Router,
@@ -14,7 +13,7 @@ function App() {
     <Router>
       <MyNavbar />
       <Switch>
-        <Route path="/input" component={SamplePage} />
+        <Route path="/input" component={CompanyInput} />
         <Route path="/"  component={LandingPage} />
       </Switch>
     </Router>
