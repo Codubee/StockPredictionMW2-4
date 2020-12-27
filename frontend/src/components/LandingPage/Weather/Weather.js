@@ -3,7 +3,7 @@ import './Weather.css'
 
 const weatherData = {
     city: "Allen ",
-    temperature: "65 ",
+    temperature: "65\xB0F ",
     picture: "/partly_cloudy.png"
 };
 
