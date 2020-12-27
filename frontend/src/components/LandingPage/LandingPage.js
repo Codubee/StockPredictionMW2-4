@@ -3,6 +3,7 @@ import React from 'react'
 import './LandingPage.css';
 import TeamPage from './TeamPage/TeamPage';
 import Explanation from './Explanation/Explanation'
+import StyleSheet from '../StyleSheet/StyleSheet'
 import Features from './Features/Features'
 import Tools from './Tools/Tools'
 

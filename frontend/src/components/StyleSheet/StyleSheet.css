@@ -1,0 +1,116 @@
+/*====================== MAIN COLORS ====================*/
+
+:root {
+    --light-bg-color: #cdeeb5;
+    --dark-text-color: #3f3f3f;
+    --dark-bg-color: #0B6623;
+    --light-text-color:#ffffff;
+}
+
+
+/* =================== COLOR [BACKGROUND & TEXT] SECTION ====================*/
+.navbar, .footer{
+    background-color: var(--dark-bg-color);
+    color: #a9a9a9;
+}
+
+.navbar:hover, .footer:hover{
+    color: #6b6b6b;
+}
+
+.light-background{
+    background-color: var(--light-bg-color);
+    color: var(--dark-text-color);
+    padding: 10px 20px;
+}
+
+.dark-background{
+    background-color: var(--dark-bg-color);
+    color: var(--light-text-color);
+    padding: 10px 20px;
+}
+
+
+/* =========================== FONT SECTION =======================*/
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Rajdhani&display=swap');
+
+.main-heading{
+    font-size: xx-large;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.sub-heading{
+    font-size: x-large;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.body-text{
+    font-size: large;
+    font-family: 'Exo 2', sans-serif;
+}
+
+/*======================================= LINKS ========================================*/
+div>a {
+    color:inherit;
+    text-decoration: underline;
+}
+.dark-background a:hover {
+    text-decoration: none;
+    color: var(--dark-text-color);
+}
+.light-background a:hover {
+    text-decoration: none;
+    color: var(--light-text-color);
+}
+
+
+/*================================== IMAGE ================================*/
+.inline-image {
+    max-width: 250px;
+}
+figcaption{
+    font-size: medium;
+    font-style: italic;
+    font-family: 'Exo 2', sans-serif;
+    text-align: center;
+    width: 250px;
+}   
+
+/* ===================================== LAYOUTS ======================================= */
+
+/* Two Equal Columns*/
+    .equal-column {
+        width: 50%;
+    }
+
+  /*Two Unequal Columns*/
+    .main-column {
+        width: 66.66%;
+        float: left;
+    }
+    .side-column {
+        width: 33.34%;
+        float: right;
+    }
+
+/*================================ FORMS =================================*/
+input{
+    border: none;
+}
+.button{
+    padding: 7px;
+    margin: 0 auto;
+    display: block;
+    transition: 0.2s;
+}
+
+.light-background .button, .dark-background .button:hover{
+    background-color: var(--dark-text-color);
+    color: var(--light-text-color);
+}
+
+.dark-background .button, .light-background .button:hover{
+    background-color: var(--light-text-color);
+    color: var(--dark-text-color);
+}
+
