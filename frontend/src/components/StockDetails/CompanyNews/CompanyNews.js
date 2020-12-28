@@ -40,24 +40,29 @@ export default class CompanyNews extends Component {
                             } = news;
 
                             return (
-                                <Col key={index} sm="12" md="6" lg="4" className="col">
-                                    <a href={url} target="_blank">
-                                        <Card className="card">
-                                            <CardImg src={image} />
-                                            <CardBody className="body">
-                                                <CardTitle className="title" tag="h5">
-                                                    {headline}
-                                                </CardTitle>
-                                                <CardSubtitle tag="h6" className="mb-2 text-muted">
-                                                    <br />
-                                                    <p>{category} | {source}</p>
-                                                    <p>{convertUnixTimeToDate(datetime)}</p>
-                                                </CardSubtitle>
-                                                <CardText className="description">{summary}</CardText>
-                                            </CardBody>
-                                        </Card>
-                                    </a>
-                                </Col>
+                                <>
+                                    { // Show 10 news
+                                        index < 10 &&  
+                                            <Col key={index} sm="12" md="6" lg="4" className="col">
+                                                <a href={url} target="_blank">
+                                                    <Card className="card">
+                                                        <CardImg src={image} />
+                                                        <CardBody className="body">
+                                                            <CardTitle className="title" tag="h5">
+                                                                {headline}
+                                                            </CardTitle>
+                                                            <CardSubtitle tag="h6" className="mb-2 text-muted">
+                                                                <br />
+                                                                <p>{category} | {source}</p>
+                                                                <p>{convertUnixTimeToDate(datetime)}</p>
+                                                            </CardSubtitle>
+                                                            <CardText className="description">{summary}</CardText>
+                                                        </CardBody>
+                                                    </Card>
+                                                </a>
+                                            </Col>
+                                    }
+                                </>
                             );
                         })
                     }
