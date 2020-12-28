@@ -8,6 +8,10 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }
 
+#company-news .col {
+    margin: 15px 0;
+}
+
 #company-news .description,
 #company-news .title {
     white-space: nowrap; 
