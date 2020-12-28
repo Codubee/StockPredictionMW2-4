@@ -1,5 +1,5 @@
 import { shallow } from "enzyme";
-import { companyNews, hasBeenRendered } from "../../global";
+import { companyNews, hasBeenRendered } from "../../../global";
 import CompanyNews from "./CompanyNews";
 import { Card } from "reactstrap";
 
