@@ -22,9 +22,7 @@ class StockQuote extends React.Component {
 
     componentDidMount() {
         getStockQuote(this.props.companyName)
-            .then(res => {
-                this.setState({ stockQuote: res.data })
-            })
+            .then(res => this.setState({ stockQuote: res.data }))
             .catch(err => console.log(err.response));
     }
 
