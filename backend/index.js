@@ -71,7 +71,7 @@ app.get('/getNews', (req, res) => {
 
     var from = weekAgo.toISOString().split("T")[0];
     var to = today.toISOString().split("T")[0];
-    axios.get(`https://finnhub.io/api/v1/company-news?symbol=${company}&from=${from}&to=${to}&token=${process.env.FINNHUB_TOKEN}`)
+    axios.get(`https://finnhub.io/api/v1/company-news?symbol=${company}&from=${from}&to=${to}&token=${process.env.FINNHUB_API_KEY}`)
         .then(response => {
             res.status(200).json(response.data);
         }).catch((error)=>{

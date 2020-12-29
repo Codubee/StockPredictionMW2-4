@@ -3,6 +3,16 @@ export const navbrand = {
     label: "Stock Predictor"
 };
 
+export const STOCK_QUOTE_URL = "/quote?company=";
+
+export const STOCK_MAP = {
+    "o": "Open",
+    "h": "High",
+    "l": "Low",
+    "c": "Current",
+    "pc": "Previous Close"
+}
+
 export const companyNews = [
     {
       "category": "company news",
