@@ -23,7 +23,7 @@ export default class CompanyNews extends Component {
 
     componentDidMount() {
         // Load company news
-        getCompanyNews("AAPL")
+        getCompanyNews(this.props.companyName)
             .then(success => this.setState({ companyNews: success.data }))
             .catch(error => console.log(error.response));
     }
