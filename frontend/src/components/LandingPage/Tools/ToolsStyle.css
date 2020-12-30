@@ -1,9 +1,8 @@
 .tools-img {
-  width: 400px;
-  height: 400px;
-  object-fit: contain;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
 }
 
 .tools-jumbotron {

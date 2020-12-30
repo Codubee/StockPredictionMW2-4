@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Media } from 'reactstrap';
+import { Jumbotron, Media, Row, Col, Container } from 'reactstrap';
 import ReactPicture from './Pictures/ReactPicture.png'
 import NodePicture from './Pictures/NodePicture.png'
 import JiraPicture from './Pictures/JiraPicture.png'
@@ -11,30 +11,24 @@ function Tools() {
         <div>
             <Jumbotron className="tools-jumbotron">
                 <h1 className="display-3">Tools</h1>
-                <p className="lead">Some of the tools we will be using to work on this project include React.js to develop the 
+                <p className="lead">Some of the tools we will be using to work on this project include React.js to develop the
                 front end, node.js to develop the back end, Jira to help keep track of what tasks must be done by who and when,
                 and finally GitHub which will simplify the process of working as a team and keeping track of multiple changes in the code.</p>
                 <hr className="my-2" />
-                <Media>
-                    <Media left href="https://reactjs.org/">
-                        <Media object src={ReactPicture} className="tools-img"/>
-                    </Media>
-                    <Media left href="https://nodejs.org/en/">
-                        <Media>
-                            <Media object src={NodePicture} className="tools-img" />
-                        </Media>
-                    </Media>
-                    <Media right href="https://www.atlassian.com/software/jira">
-                        <Media>
-                            <Media object src={JiraPicture} className="tools-img" />
-                        </Media>
-                    </Media>
-                    <Media right href="https://github.com/">
-                        <Media>
-                            <Media object src={GithubPic} className="tools-img" />
-                        </Media>
-                    </Media>
-                </Media>
+                <Row>
+                    <Col sm="3">
+                        <img object src={ReactPicture} className="tools-img" href="https://reactjs.org/" />
+                    </Col>
+                    <Col sm="3">
+                        <img object src={NodePicture} className="tools-img" href="https://reactjs.org/" />
+                    </Col>
+                    <Col sm="3">
+                        <img object src={JiraPicture} className="tools-img" href="https://reactjs.org/" />
+                    </Col>
+                    <Col sm="3">
+                        <img object src={GithubPic} className="tools-img" href="https://reactjs.org/" />
+                    </Col>
+                </Row>
             </Jumbotron>
         </div>
     );
