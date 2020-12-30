@@ -1,5 +1,5 @@
 import React from 'react';
-import { Jumbotron, Media, Row, Col, Container } from 'reactstrap';
+import { Jumbotron, Row, Col } from 'reactstrap';
 import ReactPicture from './Pictures/ReactPicture.png'
 import NodePicture from './Pictures/NodePicture.png'
 import JiraPicture from './Pictures/JiraPicture.png'
