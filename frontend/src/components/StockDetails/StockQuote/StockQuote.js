@@ -27,30 +27,28 @@ class StockQuote extends React.Component {
     }
 
     /**
-     * Converts the unix timestamp to date format: Month Day, Year.
+     * Returns today's date in date format: Month Day, Year
      * 
-     * @param {number} unixTime Unix timestamp.
      * @return {string} Date format: Month Day, Year
      */
-    convertUnixTimeToDate(unixTime) {
-        let date = fromUnixTime(unixTime);
+    getTodaysDate() {
+        let date = new Date();
         return format(date, "MMM dd, yyyy");
     }
     render() {
-        const { c, ...props } = this.state.stockQuote;
-        const t = new Date().getTime() / 1000;
+        const { c, ...quoteProps } = this.state.stockQuote;
         return (
             <div id="stock-quotes">
                 <Card className="quote">
                     <CardBody>
                         <CardTitle className="header">
                             <div className="company">{this.props.companyName}</div>
-                            <div>{this.convertUnixTimeToDate(t)}</div>
+                            <div>{this.getTodaysDate()}</div>
                         </CardTitle>
                         <p className="price">${c}</p>
                         <Row>
                             {
-                                Object.entries(props).map(([key, value]) => (
+                                Object.entries(quoteProps).map(([key, value]) => (
                                     <Col key={key}>
                                         <div className="font-weight-bold">
                                             <u>{STOCK_MAP[key]}</u>
