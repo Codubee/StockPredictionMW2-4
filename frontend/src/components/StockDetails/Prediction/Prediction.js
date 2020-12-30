@@ -1,18 +1,24 @@
-import React from 'react'
+import React from 'react';
+const axios = require('axios');
 
 export default class Prediction extends React.Component{
     constructor(props){
         super(props)
-        this.state = { companyNews:props.companyNews}
+        this.state = { prediction:{}}
     }
 
     componentDidMount(){
-        //here we call the comprehend api
+        axios.post('/checkNews', {
+            news1: 'Headline 1',
+            news2: 'Headline 2'
+          })
+          .then(res => this.setState({ prediction: res.data }))
+          .catch(err => console.log(err.response));
     }
 
     render(){
         return(
-            <h1>Prediction is: {this.state.companyName}</h1>
+            <h1>Prediction is: {this.state.prediction}</h1>
         )
     }
 }
