@@ -16,15 +16,15 @@ export default class CompanyInput extends Component {
         this.state = {
             companyName: ""
         }
-        this.handleClick = this.handleClick.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     // route the user to the information component with the company name they input
-    handleClick (){ this.props.history.push("/information/"+this.state.companyName);}
+    handleSubmit (){ this.props.history.push("/information/"+this.state.companyName);}
 
     render() {
         return (
-            <Form id="company-form">
+            <Form id="company-form" onSubmit={this.handleSubmit}>
                 <FormGroup>
                     <InputGroup>
                         <Input 
@@ -36,7 +36,7 @@ export default class CompanyInput extends Component {
                             value={this.state.companyName} 
                         />
                         <InputGroupAddon addonType="append">
-                            <Button onSubmit={this.handleClick}>Enter</Button>
+                            <Button>Enter</Button>
                         </InputGroupAddon>
                     </InputGroup>
                 </FormGroup>
