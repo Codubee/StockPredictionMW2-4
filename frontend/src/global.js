@@ -64,23 +64,6 @@ export const navlinks = [
     },
 ];
 
-export const stockData = [
-    {
-        "c": 261.74,
-        "High Price": 263.31,
-        "Low Price": 260.68,
-        "Open Price": 261.07,
-        "t": 1582641000 
-    },
-    {
-        "c": 261.74,
-        "High Price": 263.31,
-        "Low Price": 260.68,
-        "Open Price": 261.07,
-        "t": 1582641000 
-    },
-];
-
 export const featuresArray = [
     {
         "feature":"Guess Price of Stock",
