@@ -18,7 +18,7 @@ export default class Prediction extends React.Component{
 
     render(){
         return(
-            <h1>Prediction is: {this.state.prediction}</h1>
+            <h1>Prediction is: {this.state.prediction.Sentiment}</h1>
         )
     }
 }
