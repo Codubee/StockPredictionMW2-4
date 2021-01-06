@@ -1,22 +1,50 @@
 import React from 'react';
 import './Weather.css'
-
-const weatherData = {
-    city: "Allen" + " ",
-    temperature: "65" + '\xB0F ',
-    picture: "/partly cloudy.png"
-};
+import axios from 'axios'
 
 
-function Weather() {
-        const { city, temperature, picture } = weatherData;
-        return(
+class Weather extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            city:'',
+            lat:'',
+            long:'',
+            postal:'',
+            temp:'',
+            img:''
+        }
+    }
+    componentDidMount(){
+        axios.get("https://geolocation-db.com/json/")
+            .then((response)=> {
+                this.setState({
+                    city:response.data.city,
+                    lat:response.data.latitude,
+                    long:response.data.longitude,
+                    postal:response.data.postal
+                })
+                this.getWeather()
+            })
+    }
+    getWeather(){
+        axios.get('/weather?postal=')
+        .then((response)=>{
+            console.log(response.data.data[0]);
+            this.setState({
+                temp:response.data.data[0].temp,
+                img:response.data.data[0].weather.icon
+            })
+        })
+    }
+    render() {
+        return (
             <span>
-               <b>{city}</b>
-               {temperature}
-               <img className="medium-icon" src={picture} />
+                <b>{this.state.city}</b>
+                {this.state.temp}
+                {<img className="medium-icon" src={this.state.img} alt="weather" />}
             </span>
         );
+    }
 }
-
 export default Weather;

@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 app.use(express.json())
+const axios = require('axios');
 
 const port = 8080;
 
@@ -23,8 +24,9 @@ app.get('/weather', (req, res) => {
     const weather_api_key = process.env.WEATHER_API_KEY;
     const language = 'en';
     const units = 'I';
+    const postal = req.query.postal;
 
-    axios.get(`http://api.weatherbit.io/v2.0/current?postal_code=75034&key=${weather_api_key}&language=${language}&units=${units}`)    
+    axios.get(`http://api.weatherbit.io/v2.0/current?postal_code=${postal}&key=${weather_api_key}&language=${language}&units=${units}`)    
     .then(function (response) {       
         console.log(response.data);       
         res.status(200).json(response.data); })
