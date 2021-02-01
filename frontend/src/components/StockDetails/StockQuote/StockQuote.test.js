@@ -1,7 +1,6 @@
 import StockQuote from "./StockQuote";
 import { shallow } from "enzyme";
-import { Card } from "reactstrap";
-import { hasBeenRendered, stockData } from "../../global";
+import { hasBeenRendered } from "../../../global";
 
 const wrapper = shallow(<StockQuote />);
 
@@ -11,13 +10,15 @@ describe("Stock Display Component", () => {
     });
     
     it("should show stock quote", () => {
-        stockData.forEach((quote, index) => {
-            const {t, ...quoteProps} = quote;
-            const card = wrapper.find(Card).at(index);
-            for(let data in quoteProps) {
-                expect(card.html()).toContain(data);
-                expect(card.html()).toContain(quote[data]);
-            }
-        })
+        const quote = {
+            "c": 261.74,
+            "High Price": 263.31,
+            "Low Price": 260.68,
+            "Open Price": 261.07
+        };
+        wrapper.setState({ stockQuote: quote });
+        const quoteState = wrapper.state().stockQuote;
+        for(let data in quoteState)
+            expect(quoteState[data]).toEqual(quote[data]);
     });
 });

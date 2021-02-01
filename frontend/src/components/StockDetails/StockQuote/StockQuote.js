@@ -1,11 +1,12 @@
 import React from "react";
-import { stockData } from "../../../global";
 import {
     Card, CardBody, CardTitle,
     Row, Col,
 } from "reactstrap";
 import { format, fromUnixTime } from 'date-fns';
 import "./StockQuote.css";
+import { getStockQuote } from "../../../service/StockQuote/StockQuote";
+import { STOCK_MAP } from "../../../global";
 
 /**
  * Shows list of stock quotes.
@@ -14,56 +15,51 @@ import "./StockQuote.css";
  */
 class StockQuote extends React.Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state = {companyName:props.companyName}
+        this.state = { stockQuote: {} }
     }
 
-    componentDidMount(){
-        //this is where we will call the stock quote api
+    componentDidMount() {
+        getStockQuote(this.props.companyName)
+            .then(res => this.setState({ stockQuote: res.data }))
+            .catch(err => console.log(err.response));
     }
 
     /**
-     * Converts the unix timestamp to date format: Month Day, Year.
+     * Returns today's date in date format: Month Day, Year
      * 
-     * @param {number} unixTime Unix timestamp.
      * @return {string} Date format: Month Day, Year
      */
-    convertUnixTimeToDate(unixTime) {
-        let date = fromUnixTime(unixTime);
+    getTodaysDate() {
+        let date = new Date();
         return format(date, "MMM dd, yyyy");
     }
     render() {
+        const { c, ...quoteProps } = this.state.stockQuote;
         return (
             <div id="stock-quotes">
-                {
-                    stockData.map((quote, index) => {
-                        const { t, c, ...props } = quote;
-                        return (
-                            <Card key={index} className="quote">
-                                <CardBody>
-                                    <CardTitle className="header">
-                                        <div className="company">Sabre</div>
-                                        <div>{this.convertUnixTimeToDate(t)}</div>
-                                    </CardTitle>
-                                    <p className="price">${c}</p>
-                                    <Row>
-                                        {
-                                            Object.entries(props).map(([key, value]) => (
-                                                <Col key={key}>
-                                                    <div className="font-weight-bold">
-                                                        <u>{key}</u>
-                                                    </div>
-                                                    <div>${value}</div>
-                                                </Col>
-                                            ))
-                                        }
-                                    </Row>
-                                </CardBody>
-                            </Card>
-                        );
-                    })
-                }
+                <Card className="quote">
+                    <CardBody>
+                        <CardTitle className="header">
+                            <div className="company">{this.props.companyName}</div>
+                            <div>{this.getTodaysDate()}</div>
+                        </CardTitle>
+                        <p className="price">${c}</p>
+                        <Row>
+                            {
+                                Object.entries(quoteProps).map(([key, value]) => (
+                                    <Col key={key}>
+                                        <div className="font-weight-bold">
+                                            <u>{STOCK_MAP[key]}</u>
+                                        </div>
+                                        <div>${value}</div>
+                                    </Col>
+                                ))
+                            }
+                        </Row>
+                    </CardBody>
+                </Card>
             </div>
         );
     }
