@@ -10,7 +10,6 @@
     "bootstrap": "^4.5.3",
     "date-fns": "^2.16.1",
     "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.5",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
